@@ -1,0 +1,15 @@
+package db;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class DB {
+
+	private static Properties loadProperties() {
+		
+		//o arquivo está dentro da pasta raiz do projeto com isso digitando db.properties ele vai buscar
+		try (FileInputStream fs = new FileInputStream("db.properties")) {
+			
+		}
+	}
+}
