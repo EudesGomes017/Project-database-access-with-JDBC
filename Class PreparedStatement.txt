@@ -1,0 +1,21 @@
+PreparedStatement é uma subinterface da interface Statement no Java e é usada para executar instruções SQL parametrizadas em bancos de dados. Aqui estão os principais aspectos e vantagens do uso de PreparedStatement:
+
+Consultas parametrizadas: Uma consulta parametrizada é uma instrução SQL que contém espaços reservados para parâmetros. Isso permite que você insira valores dinâmicos nas consultas de forma segura, evitando problemas de segurança como a injeção de SQL.
+
+Precompilação: Uma das principais vantagens do PreparedStatement é que a consulta é pré-compilada no momento da criação do objeto PreparedStatement. Isso significa que, quando você executa a consulta várias vezes com valores diferentes, o banco de dados pode reutilizar o plano de execução otimizado, resultando em melhor desempenho em comparação com a execução de consultas Statement simples.
+
+Segurança: O uso de consultas parametrizadas com PreparedStatement protege contra a injeção de SQL, que é uma vulnerabilidade comum em aplicativos da web. Ao usar parâmetros, os dados inseridos são tratados como valores, não como parte da instrução SQL, tornando difícil para um invasor manipular a consulta para executar comandos maliciosos.
+
+Melhor legibilidade e manutenção: O uso de consultas parametrizadas torna o código mais legível e fácil de manter, pois separa claramente a lógica da consulta do valor dos parâmetros.
+
+Aqui está um exemplo simples de como usar PreparedStatement para executar uma consulta parametrizada:
+
+
+String sql = "SELECT * FROM tabela WHERE coluna = ?";
+PreparedStatement pstmt = connection.prepareStatement(sql);
+pstmt.setString(1, valorDoParametro);
+ResultSet rs = pstmt.executeQuery();
+
+
+
+Neste exemplo, o caractere ? é usado como marcador de posição para o parâmetro na consulta. O método setString() é então usado para atribuir um valor ao parâmetro antes de executar a consulta. Isso torna a consulta segura e eficiente.

@@ -1,0 +1,17 @@
+A classe Statement no Java é parte do pacote java.sql e é usada para executar instruções SQL em bancos de dados. Ela representa uma instrução SQL estática e é usada principalmente para consultas simples sem parâmetros.
+
+Aqui estão algumas das principais funções e características da classe Statement:
+
+Execução de consultas: Você pode usar um objeto Statement para executar consultas SQL em um banco de dados e obter resultados.
+
+Sem suporte a parâmetros: As consultas executadas usando Statement não suportam parâmetros. Isso significa que você precisa concatenar os valores diretamente na string SQL, o que pode tornar seu código vulnerável a ataques de injeção de SQL.
+
+Retorno de resultados: O método executeQuery() é usado para executar consultas de seleção (SELECT) e retorna um objeto ResultSet que contém os resultados da consulta.
+
+Execução de atualizações: O método executeUpdate() é usado para executar instruções SQL que modificam o banco de dados, como INSERT, UPDATE ou DELETE. Ele retorna o número de linhas afetadas.
+
+Fechar recursos: Sempre que você terminar de usar um objeto Statement, é uma boa prática fechá-lo para liberar os recursos associados. Isso é feito chamando o método close().
+
+Não é adequado para consultas parametrizadas: Como mencionado, Statement não suporta consultas parametrizadas. Para consultas com parâmetros, é preferível usar PreparedStatement, que oferece melhor desempenho e segurança contra injeção de SQL.
+
+Em resumo, a classe Statement no Java é usada para executar instruções SQL estáticas em bancos de dados, mas é importante estar ciente das limitações, como a falta de suporte a parâmetros.

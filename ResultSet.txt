@@ -1,0 +1,17 @@
+
+A classe ResultSet em Java é usada para representar o conjunto de resultados de uma consulta SQL executada em um banco de dados. Ela fornece métodos para iterar sobre os resultados e acessar os dados retornados pela consulta. Aqui estão algumas das principais funcionalidades e características da classe ResultSet:
+
+Acesso aos dados: Você pode usar os métodos getInt(), getString(), getDouble() e assim por diante para recuperar os valores das colunas do conjunto de resultados. Esses métodos aceitam o número do índice da coluna ou o nome da coluna como argumento.
+
+Iteração sobre os resultados: A classe ResultSet mantém um cursor que aponta para uma linha específica no conjunto de resultados. Você pode usar métodos como next() para mover o cursor para a próxima linha e previous() para mover o cursor para a linha anterior.
+
+Recursos associados: É importante fechar o objeto ResultSet quando você terminar de usá-lo para liberar os recursos associados, como conexões com o banco de dados. Isso é feito chamando o método close().
+
+Manipulação de dados: Embora a principal função do ResultSet seja recuperar dados de consultas SQL, ele também suporta operações para atualizar, inserir e excluir dados no banco de dados, mas isso é limitado a tipos específicos de resultados e depende do tipo de ResultSet retornado pela consulta.
+
+Tipos de ResultSet: Existem três tipos principais de ResultSet:
+
+TYPE_FORWARD_ONLY: O cursor só pode ser movido para frente, uma linha de cada vez.
+TYPE_SCROLL_INSENSITIVE: O cursor pode ser movido para frente e para trás e não reflete as mudanças no banco de dados que ocorrem após a criação do ResultSet.
+TYPE_SCROLL_SENSITIVE: Semelhante ao TYPE_SCROLL_INSENSITIVE, mas reflete as mudanças no banco de dados que ocorrem após a criação do ResultSet.
+Em resumo, a classe ResultSet é fundamental para processar os resultados de consultas SQL em Java e oferece uma variedade de métodos para acessar e manipular esses resultados de forma eficiente.
